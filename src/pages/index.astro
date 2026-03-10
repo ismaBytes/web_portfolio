@@ -21,12 +21,12 @@ import TitleSection from "@/components/TitleSection.astro"
   description={t(lang, "meta.description")}
 >
   <main class="px-4">
-    <SectionContainer class="py-16 md:py-36">
+    <SectionContainer id="home" class="py-16 md:py-36">
       <Hero>
     </Hero>
     </SectionContainer>
     <div class="space-y-24">
-    <SectionContainer id="experiencia">
+    <SectionContainer id="experience">
       <TitleSection>
         <Briefcase class="size-8" />
         <span data-i18n-key="nav.experience">{t(lang, "nav.experience")}</span>
@@ -34,7 +34,7 @@ import TitleSection from "@/components/TitleSection.astro"
       <Experience />
     </SectionContainer>
 
-    <SectionContainer id="habilidades">
+    <SectionContainer id="skills">
       <Skills />
     </SectionContainer>
 
@@ -48,7 +48,7 @@ import TitleSection from "@/components/TitleSection.astro"
     </SectionContainer>
     */}
 
-    <SectionContainer id="sobre-mi">
+    <SectionContainer id="about-me">
       <TitleSection>
         <ProfileCheck class="size-8" />
         <span data-i18n-key="nav.about">{t(lang, "nav.about")}</span>
