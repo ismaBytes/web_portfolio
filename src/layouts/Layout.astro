@@ -11,10 +11,11 @@ interface Props {
 }
 
 const { description, title } = Astro.props;
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} data-i18n-key="meta.description" />
@@ -36,7 +37,7 @@ const { description, title } = Astro.props;
     <Header />
     <slot />
     <Footer />
-    <script type="module" src="/scripts/i18n.js" defer></script>
+
     <style is:global>
       :root {
         color-scheme: light dark;

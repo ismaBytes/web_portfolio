@@ -2,7 +2,7 @@
 import { t } from "../lib/translations"
 
 const currentYear = new Date().getFullYear()
-const lang = undefined
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
 ---
 
 <footer

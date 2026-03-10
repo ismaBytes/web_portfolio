@@ -1,0 +1,47 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import { t } from "../../lib/translations"
+
+import AboutMe from "@/components/AboutMe.astro"
+import Briefcase from "@/components/icons/Briefcase.astro"
+import Experience from "@/components/Experience.astro"
+import ProfileCheck from "@/components/icons/ProfileCheck.astro"
+import SectionContainer from "@/components/SectionContainer.astro"
+import Skills from "@/components/Skills.astro"
+import Hero from "@/components/Hero.astro"
+import TitleSection from "@/components/TitleSection.astro"
+
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
+---
+
+<Layout
+  title={t(lang, "meta.title")}
+  description={t(lang, "meta.description")}
+>
+  <main class="px-4">
+    <SectionContainer id="home" class="py-16 md:py-36">
+      <Hero />
+    </SectionContainer>
+    <div class="space-y-24">
+      <SectionContainer id="experience">
+        <TitleSection>
+          <Briefcase class="size-8" />
+          <span>{t(lang, "nav.experience")}</span>
+        </TitleSection>
+        <Experience />
+      </SectionContainer>
+
+      <SectionContainer id="skills">
+        <Skills />
+      </SectionContainer>
+
+      <SectionContainer id="about-me">
+        <TitleSection>
+          <ProfileCheck class="size-8" />
+          <span>{t(lang, "nav.about")}</span>
+        </TitleSection>
+        <AboutMe />
+      </SectionContainer>
+    </div>
+  </main>
+</Layout>

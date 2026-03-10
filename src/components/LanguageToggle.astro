@@ -1,11 +1,13 @@
 ---
-// simple button that toggles language; actual text will be set by i18n script
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
+const nextLang = lang === "es" ? "en" : "es";
+const nextUrl = nextLang === "es" ? "/esp/" : "/eng/";
+const label = nextLang === "es" ? "🇪🇸" : "🇬🇧";
 ---
-<button
-  type="button"
-  data-i18n-key="misc.toggle"
-  data-i18n-toggle
+<a
+  href={nextUrl}
   class="ml-2 px-2 py-1 rounded text-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition text-lg"
+  aria-label={lang === "es" ? "Switch to English" : "Cambiar a Español"}
 >
-  🇪🇸
-</button>
+  {label}
+</a>

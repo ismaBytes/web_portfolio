@@ -6,7 +6,7 @@ import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
 import { t } from "../lib/translations"
 
-const lang = undefined;
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
 ---
 
 <div class="max-w-xl">

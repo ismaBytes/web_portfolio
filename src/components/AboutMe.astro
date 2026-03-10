@@ -2,7 +2,7 @@
  const personalImageAlt = "Ismael Bahmane Rodriguez"
 import { t } from "../lib/translations"
 
-const lang = undefined
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">

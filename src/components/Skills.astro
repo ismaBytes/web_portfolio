@@ -4,7 +4,7 @@ import CodeIcon from "./icons/Code.astro"
 import TechLogo from "./TechLogo.astro"
 import { t } from "../lib/translations"
 
-const lang = undefined; // spanish default for server render
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
 
 const FRONTEND = [
   { name: "HTML", slug: "html5" },

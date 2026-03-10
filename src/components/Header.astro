@@ -4,7 +4,9 @@ import LanguageToggle from "./LanguageToggle.astro"
 
 import { t } from "../lib/translations";
 
-const lang = undefined; // default for server-side translation is Spanish
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
+
+const baseUrl = lang === "es" ? "/esp/" : "/eng/";
 
 const navItems = [
   {
@@ -12,21 +14,21 @@ const navItems = [
     titleKey: "nav.experience",
     ariaLabelKey: "nav.experience",
     label: "experience",
-    url: "/#experience",
+    url: `${baseUrl}/#experience`,
   },
   {
     title: t(lang, "nav.stack"),
     titleKey: "nav.stack",
     ariaLabelKey: "nav.stack",
     label: "skills",
-    url: "/#skills",
+    url: `${baseUrl}/#skills`,
   },
   {
     title: t(lang, "nav.about"),
     titleKey: "nav.about",
     ariaLabelKey: "nav.about",
     label: "about-me",
-    url: "/#about-me",
+    url: `${baseUrl}/#about-me`,
   },
   {
     title: t(lang, "nav.contact"),

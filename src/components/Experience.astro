@@ -2,7 +2,7 @@
 import ExperienceItem from "./ExperienceItem.astro"
 import { t } from "../lib/translations"
 
-const lang = undefined;
+const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
 
 const EXPERIENCE = [
   {
