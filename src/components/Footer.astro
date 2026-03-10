@@ -1,5 +1,8 @@
 ---
+import { t } from "../lib/translations"
+
 const currentYear = new Date().getFullYear()
+const lang = undefined
 ---
 
 <footer
@@ -9,20 +12,22 @@ const currentYear = new Date().getFullYear()
     class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
   >
     <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >&copy; {currentYear}
-      <a href="[tu-sitio-web]" class="hover:underline">Ismael Bahmane Rodriguez</a>. Casi
-      todos los derechos reservados
+      data-i18n-key="footer.copy"
+    >
+      {t(lang, "footer.copy").replace("{year}", String(currentYear))}
     </span>
     <ul
       class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
     >
       <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
+        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6" data-i18n-key="footer.aboutLink">
+          {t(lang, "footer.aboutLink")}
+        </a>
       </li>
       <li>
-        <a id="contacto" href="mailto:ismabytes@gmail.com" class="hover:underline"
-          >Contacto</a
-        >
+        <a id="contacto" href="mailto:ismabytes@gmail.com" class="hover:underline" data-i18n-key="footer.contactLink">
+          {t(lang, "footer.contactLink")}
+        </a>
       </li>
     </ul>
   </div>

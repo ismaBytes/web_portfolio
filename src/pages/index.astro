@@ -1,5 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro"
+import { t } from "../lib/translations"
+
+const lang = undefined;
 
 import AboutMe from "@/components/AboutMe.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
@@ -14,8 +17,8 @@ import TitleSection from "@/components/TitleSection.astro"
 ---
 
 <Layout
-  title="Portfolio de Ismael Bahmane Rodriguez - Desarrollador Full Stack"
-  description="Contrata a Ismael Bahmane Rodriguez para crear tu aplicación web o móvil. Desarrollador Full Stack especializado en Java, SpringBoot, Angular y Vue.js."
+  title={t(lang, "meta.title")}
+  description={t(lang, "meta.description")}
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
@@ -26,7 +29,7 @@ import TitleSection from "@/components/TitleSection.astro"
     <SectionContainer id="experiencia">
       <TitleSection>
         <Briefcase class="size-8" />
-        Experiencia laboral
+        <span data-i18n-key="nav.experience">{t(lang, "nav.experience")}</span>
       </TitleSection>
       <Experience />
     </SectionContainer>
@@ -48,7 +51,7 @@ import TitleSection from "@/components/TitleSection.astro"
     <SectionContainer id="sobre-mi">
       <TitleSection>
         <ProfileCheck class="size-8" />
-        Sobre mí
+        <span data-i18n-key="nav.about">{t(lang, "nav.about")}</span>
       </TitleSection>
       <AboutMe />
     </SectionContainer>

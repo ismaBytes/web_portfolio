@@ -4,6 +4,9 @@ import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
 import SocialPill from "@/components/SocialPill.astro"
+import { t } from "../lib/translations"
+
+const lang = undefined;
 ---
 
 <div class="max-w-xl">
@@ -24,20 +27,20 @@ import SocialPill from "@/components/SocialPill.astro"
   </div>
   <h1
     class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    data-i18n-key="hero.greeting"
   >
-    Hey, soy Ismael Bahmane
+    {t(lang, "hero.greeting")}
   </h1>
   <p
     class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    data-i18n-key="hero.description"
   >
-    Desarrollador full stack con experiencia en crear aplicaciones limpias y escalables. <strong
-      >Especializado en Java, SpringBoot, Angular y Vue.js</strong
-    > de Valencia, España 🇪🇸. Apasionado por la tecnología y el aprendizaje continuo.
+    {t(lang, "hero.description")}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
     <SocialPill href="mailto:ismabytes@gmail.com">
       <MailIcon class="size-4" />
-      Contáctame
+      <span data-i18n-key="hero.contactMe">{t(lang, "hero.contactMe")}</span>
     </SocialPill>
     <SocialPill href="https://www.linkedin.com/in/ismael-bahmane-rodriguez-83332424a">
       <LinkedInIcon class="size-4" />

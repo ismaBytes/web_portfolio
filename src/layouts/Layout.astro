@@ -17,7 +17,7 @@ const { description, title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
+    <meta name="description" content={description} data-i18n-key="meta.description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
@@ -36,6 +36,7 @@ const { description, title } = Astro.props;
     <Header />
     <slot />
     <Footer />
+    <script type="module" src="/scripts/i18n.js" defer></script>
     <style is:global>
       :root {
         color-scheme: light dark;
