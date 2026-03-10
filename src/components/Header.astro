@@ -20,8 +20,8 @@ const navItems = [
     title: t(lang, "nav.stack"),
     titleKey: "nav.stack",
     ariaLabelKey: "nav.stack",
-    label: "skills",
-    url: `${baseUrl}/#skills`,
+    label: "stack",
+    url: `${baseUrl}/#stack`,
   },
   {
     title: t(lang, "nav.about"),
@@ -65,44 +65,76 @@ const navItems = [
 </header>
 
 <script>
-  // Highlight nav links as user scrolls through sections
-  const sections = document.querySelectorAll("section[id]");
-  const navLinks = document.querySelectorAll("a[data-section]");
+  let isScrolling = false;
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          // Update active nav link style
-          navLinks.forEach((link) => {
-            const isActive = link.getAttribute("data-section") === id;
-            link.classList.toggle("text-blue-500", isActive);
-            link.classList.toggle("dark:text-blue-400", isActive);
-          });
-        }
-      });
-    },
-    {
-      threshold: 0.4,
-    }
-  );
+  const updateHeader = () => {
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll("a[data-section]");
+    const nav = document.querySelector("header nav");
 
-  sections.forEach((section) => observer.observe(section));
+    if (!nav) return;
 
-  // Smooth scroll on click without updating URL
-  navLinks.forEach((link) => {
-    link.addEventListener("click", (e) => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (isScrolling) return; // Ignore observer updates while a manual scroll is happening
+
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            navLinks.forEach((link) => {
+              const isActive = link.getAttribute("data-section") === id;
+              link.classList.toggle("text-blue-500", isActive);
+              link.classList.toggle("dark:text-blue-400", isActive);
+            });
+
+            const hash = id === "home" ? "" : `#${id}`;
+            const newUrl = hash ? hash : window.location.pathname;
+            if (window.location.hash !== hash) {
+              history.replaceState(null, "", newUrl);
+            }
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    // Event delegation for clicks
+    nav.onclick = (e) => {
+      const link = (e.target as HTMLElement).closest("a[data-section]");
+      if (!link) return;
+
       const sectionId = link.getAttribute("data-section");
       if (sectionId && sectionId !== "contacto") {
         e.preventDefault();
         const target = document.getElementById(sectionId);
         if (target) {
+          isScrolling = true;
+          
+          // Update visual active state immediately
+          navLinks.forEach((l) => {
+            const isActive = l === link;
+            l.classList.toggle("text-blue-500", isActive);
+            l.classList.toggle("dark:text-blue-400", isActive);
+          });
+
+          const hash = sectionId === "home" ? "" : `#${sectionId}`;
+          const newUrl = hash ? hash : window.location.pathname;
+          history.replaceState(null, "", newUrl);
+          
           target.scrollIntoView({ behavior: "smooth" });
+
+          // Unlock after scroll finishes (roughly)
+          setTimeout(() => {
+            isScrolling = false;
+          }, 800);
         }
       }
-    });
-  });
+    };
+  };
+
+  document.addEventListener("astro:page-load", updateHeader);
 </script>
 
 <style>

@@ -54,7 +54,7 @@ export const translations: Record<Lang, Record<string, any>> = {
       toggle: "🇬🇧",
     },
     footer: {
-      copy: "© {year} Ismael Bahmane Rodriguez. Casi todos los derechos reservados",
+      copy: "© {year} Ismael Bahmane Rodriguez. Casi todos los derechos reservados.",
       aboutLink: "Sobre mí",
       contactLink: "Contacto",
     },
@@ -112,7 +112,7 @@ export const translations: Record<Lang, Record<string, any>> = {
       toggle: "🇪🇸",
     },
     footer: {
-      copy: "© {year} Ismael Bahmane Rodriguez. Almost all rights reserved",
+      copy: "© {year} Ismael Bahmane Rodriguez. Almost all rights reserved.",
       aboutLink: "About me",
       contactLink: "Contact",
     },
