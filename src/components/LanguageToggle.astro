@@ -1,13 +1,27 @@
 ---
 const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
-const nextLang = lang === "es" ? "en" : "es";
-const nextUrl = nextLang === "es" ? "/esp/" : "/eng/";
-const label = nextLang === "es" ? "🇪🇸" : "🇬🇧";
 ---
-<a
-  href={nextUrl}
-  class="ml-2 px-2 py-1 rounded text-sm bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition text-lg"
-  aria-label={lang === "es" ? "Switch to English" : "Cambiar a Español"}
->
-  {label}
-</a>
+<div class="flex items-center gap-x-1 ml-4 border-l border-gray-300 dark:border-gray-700 pl-4">
+  <a
+    href="/esp/"
+    class={`flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 text-xl
+      ${lang === 'es' 
+        ? 'bg-blue-500/10 dark:bg-blue-400/10 ring-2 ring-blue-500/50 scale-110' 
+        : 'opacity-50 hover:opacity-100 hover:bg-gray-200 dark:hover:bg-gray-800'}`}
+    aria-label="Ver en Español"
+    title="Español"
+  >
+    🇪🇸
+  </a>
+  <a
+    href="/eng/"
+    class={`flex items-center justify-center w-8 h-8 rounded-lg transition-all duration-200 text-xl
+      ${lang === 'en' 
+        ? 'bg-blue-500/10 dark:bg-blue-400/10 ring-2 ring-blue-500/50 scale-110' 
+        : 'opacity-50 hover:opacity-100 hover:bg-gray-200 dark:hover:bg-gray-800'}`}
+    aria-label="View in English"
+    title="English"
+  >
+    🇬🇧
+  </a>
+</div>

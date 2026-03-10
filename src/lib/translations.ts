@@ -16,7 +16,7 @@ export const translations: Record<Lang, Record<string, any>> = {
     hero: {
       greeting: "Hey, soy Ismael Bahmane",
       description:
-        "Desarrollador full stack con experiencia en crear aplicaciones limpias y escalables. Especializado en Java, SpringBoot, Angular y Vue.js de Valencia, España 🇪🇸. Apasionado por la tecnología y el aprendizaje continuo.",
+        "Desarrollador full stack con experiencia en crear aplicaciones limpias y escalables. Especializado en Java, SpringBoot, Angular y Vue.js de Valencia, España. Apasionado por la tecnología y el aprendizaje continuo.",
       contactMe: "Contáctame",
       available: "Disponible para trabajar",
     },
@@ -74,7 +74,7 @@ export const translations: Record<Lang, Record<string, any>> = {
     hero: {
       greeting: "Hey, I'm Ismael Bahmane",
       description:
-        "Full stack developer with experience building clean and scalable applications. Specializing in Java, SpringBoot, Angular, and Vue.js from Valencia, Spain 🇪🇸. Passionate about technology and continuous learning.",
+        "Full stack developer with experience building clean and scalable applications. Specializing in Java, SpringBoot, Angular, and Vue.js from Valencia, Spain. Passionate about technology and continuous learning.",
       contactMe: "Contact me",
       available: "Available to work",
     },
