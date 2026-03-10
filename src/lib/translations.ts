@@ -18,6 +18,7 @@ export const translations: Record<Lang, Record<string, any>> = {
       description:
         "Desarrollador full stack con experiencia en crear aplicaciones limpias y escalables. Especializado en Java, SpringBoot, Angular y Vue.js de Valencia, España 🇪🇸. Apasionado por la tecnología y el aprendizaje continuo.",
       contactMe: "Contáctame",
+      available: "Disponible para trabajar",
     },
     skills: {
       techStack: "Stack Tecnológico",
@@ -50,7 +51,7 @@ export const translations: Record<Lang, Record<string, any>> = {
       },
     },
     misc: {
-      toggle: "EN",
+      toggle: "🇬🇧",
     },
     footer: {
       copy: "© {year} Ismael Bahmane Rodriguez. Casi todos los derechos reservados",
@@ -75,6 +76,7 @@ export const translations: Record<Lang, Record<string, any>> = {
       description:
         "Full stack developer with experience building clean and scalable applications. Specializing in Java, SpringBoot, Angular, and Vue.js from Valencia, Spain 🇪🇸. Passionate about technology and continuous learning.",
       contactMe: "Contact me",
+      available: "Available to work",
     },
     skills: {
       techStack: "Tech Stack",
@@ -107,7 +109,7 @@ export const translations: Record<Lang, Record<string, any>> = {
       },
     },
     misc: {
-      toggle: "ES",
+      toggle: "🇪🇸",
     },
     footer: {
       copy: "© {year} Ismael Bahmane Rodriguez. Almost all rights reserved",

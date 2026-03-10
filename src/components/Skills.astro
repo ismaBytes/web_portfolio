@@ -1,44 +1,46 @@
 ---
 import TitleSection from "./TitleSection.astro"
 import CodeIcon from "./icons/Code.astro"
-import JavaIcon from "./icons/Java.astro"
-import ToolIcon from "./icons/Tool.astro"
+import TechLogo from "./TechLogo.astro"
 import { t } from "../lib/translations"
 
 const lang = undefined; // spanish default for server render
 
 const FRONTEND = [
-  { name: "HTML", icon: CodeIcon },
-  { name: "CSS", icon: CodeIcon },
-  { name: "Javascript", icon: CodeIcon },
-  { name: "Angular", icon: CodeIcon },
-  { name: "Vue.js", icon: CodeIcon },
-  { name: "Nuxt", icon: CodeIcon },
+  { name: "HTML", slug: "html5" },
+  { name: "CSS", slug: "css" },
+  { name: "Javascript", slug: "javascript" },
+  { name: "Angular", slug: "angular" },
+  { name: "Vue.js", slug: "vuedotjs" },
+  { name: "Nuxt", slug: "nuxt" },
 ]
 
 const BACKEND = [
-  { name: "Java", icon: JavaIcon },
-  { name: "Python", icon: JavaIcon },
-  { name: "C#", icon: JavaIcon },
-  { name: "SpringBoot", icon: JavaIcon },
-  { name: "Maven", icon: JavaIcon },
+  { name: "Java", slug: "devbox" },
+  { name: "Python", slug: "python" },
+  { name: ".NET", slug: "dotnet" },
+  { name: "SpringBoot", slug: "spring" },
+  { name: "Maven", slug: "apachemaven" },
 ]
 
 const TOOLS = [
-  { name: "MySQL", icon: ToolIcon },
-  { name: "MariaDB", icon: ToolIcon },
-  { name: "SQL Server", icon: ToolIcon },
-  { name: "MongoDB", icon: ToolIcon },
-  { name: "Git", icon: ToolIcon },
-  { name: "Azure Repos", icon: ToolIcon },
-  { name: "GitHub", icon: ToolIcon },
-  { name: "GitLab", icon: ToolIcon },
-  { name: "CI/CD", icon: ToolIcon },
-  { name: "Jira", icon: ToolIcon },
-  { name: "Notion", icon: ToolIcon },
-  { name: "Nginx", icon: ToolIcon },
-  { name: "SSH", icon: ToolIcon },
-  { name: "SSL", icon: ToolIcon },
+  { name: "MySQL", slug: "mysql" },
+  { name: "MariaDB", slug: "mariadb" },
+  { name: "SQL Server", slug: "sqlite" },
+  { name: "MongoDB", slug: "mongodb" },
+  { name: "Git", slug: "git" },
+  { name: "Azure Repos", slug: "bitbucket" },
+  { name: "GitHub", slug: "github" },
+  { name: "GitLab", slug: "gitlab" },
+  { name: "CI/CD", slug: "githubactions" },
+  { name: "Jira", slug: "jira" },
+  { name: "Notion", slug: "notion" },
+  { name: "Nginx", slug: "nginx" },
+  { name: "SSH", slug: "gnubash" },
+  { name: "SSL", slug: "letsencrypt" },
+  { name: "Visual Studio Code", slug: "vscodium" },
+  { name: "IntelliJ", slug: "intellijidea" },
+  { name: "WebStorm", slug: "webstorm" },
 ]
 ---
 
@@ -51,9 +53,9 @@ const TOOLS = [
   <div>
     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4" data-i18n-key="skills.frontend">{t(lang, "skills.frontend")}</h3>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {FRONTEND.map(({ name, icon: Icon }) => (
+      {FRONTEND.map(({ name, slug }) => (
         <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
-          <Icon class="size-6 text-blue-500" />
+          <TechLogo slug={slug} class="size-6 text-blue-500" />
           <span class="text-gray-800 dark:text-gray-200">{name}</span>
         </div>
       ))}
@@ -63,9 +65,9 @@ const TOOLS = [
   <div>
     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4" data-i18n-key="skills.backend">{t(lang, "skills.backend")}</h3>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {BACKEND.map(({ name, icon: Icon }) => (
+      {BACKEND.map(({ name, slug }) => (
         <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
-          <Icon class="size-6 text-green-500" />
+          <TechLogo slug={slug} class="size-6 text-green-500" />
           <span class="text-gray-800 dark:text-gray-200">{name}</span>
         </div>
       ))}
@@ -75,9 +77,9 @@ const TOOLS = [
   <div>
     <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4" data-i18n-key="skills.generalTools">{t(lang, "skills.generalTools")}</h3>
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-      {TOOLS.map(({ name, icon: Icon }) => (
+      {TOOLS.map(({ name, slug }) => (
         <div class="flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 p-3 rounded-lg">
-          <Icon class="size-6 text-purple-500" />
+          <TechLogo slug={slug} class="size-6 text-purple-500" />
           <span class="text-gray-800 dark:text-gray-200">{name}</span>
         </div>
       ))}

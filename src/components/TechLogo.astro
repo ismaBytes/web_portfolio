@@ -1,0 +1,25 @@
+---
+import * as simpleIcons from 'simple-icons'
+
+interface Props {
+  slug: string
+  class?: string
+}
+
+const { slug, class: className = "size-6" } = Astro.props
+
+// simple-icons usa camelCase con el slug como propiedad
+// Convertir slug a camelCase: "html5" -> "html5", "vuedotjs" -> "vuedotjs"
+const normalizedSlug = `si${slug.charAt(0).toUpperCase()}${slug.slice(1)}`
+const icon = (simpleIcons as any)[normalizedSlug]
+---
+
+{icon && (
+  <svg
+    class={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    xmlns="http://www.w3.org/2000/svg"
+    set:html={icon.svg}
+  />
+)}

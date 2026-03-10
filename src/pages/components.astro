@@ -3,8 +3,11 @@ import Badge from "@/components/Badge.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import SocialPill from "@/components/SocialPill.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
+import { t } from "@/lib/translations"
 
 import Layout from "@/layouts/Layout.astro"
+
+const lang = undefined;
 ---
 
 <Layout
@@ -15,7 +18,7 @@ import Layout from "@/layouts/Layout.astro"
     <article class="mb-10">
       <h1 class="mb-4 text-xl font-semibold">&lt;Badge /&gt;</h1>
 
-      <Badge>Disponible para trabajar</Badge>
+      <Badge data-i18n-key="hero.available">{t(lang, "hero.available")}</Badge>
     </article>
 
     <article class="mb-10">
