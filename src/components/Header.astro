@@ -70,7 +70,7 @@ const navItems = [
   const updateHeader = () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll("a[data-section]");
-    const nav = document.querySelector("header nav");
+    const nav = document.querySelector("header nav") as HTMLElement | null;
 
     if (!nav) return;
 
@@ -101,7 +101,7 @@ const navItems = [
     sections.forEach((section) => observer.observe(section));
 
     // Event delegation for clicks
-    nav.onclick = (e) => {
+    nav?.addEventListener("click", (e: MouseEvent) => {
       const link = (e.target as HTMLElement).closest("a[data-section]");
       if (!link) return;
 
@@ -131,7 +131,7 @@ const navItems = [
           }, 800);
         }
       }
-    };
+    });
   };
 
   document.addEventListener("astro:page-load", updateHeader);
