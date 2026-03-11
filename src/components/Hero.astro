@@ -3,10 +3,14 @@ const personalImageAlt = "Ismael Bahmane Rodriguez"
 import Badge from "@/components/Badge.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
+import DownloadIcon from "@/components/icons/Download.astro"
 import SocialPill from "@/components/SocialPill.astro"
 import { t } from "../lib/translations"
 
 const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
+const resumeFile = lang === "es" 
+  ? "/Currículum - Ismael Bahmane Rodriguez.pdf" 
+  : "/Resume - Ismael Bahmane Rodriguez.pdf";
 ---
 
 <div class="max-w-xl">
@@ -38,13 +42,17 @@ const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
     {t(lang, "hero.description")}
   </p>
   <nav class="flex flex-wrap gap-4 mt-8">
-    <SocialPill href="mailto:ismabytes@gmail.com">
-      <MailIcon class="size-4" />
-      <span data-i18n-key="hero.contactMe">{t(lang, "hero.contactMe")}</span>
+    <SocialPill href={resumeFile} download={resumeFile}>
+      <DownloadIcon class="size-4" />
+      <span data-i18n-key="hero.downloadResume">{t(lang, "hero.downloadResume")}</span>
     </SocialPill>
     <SocialPill href="https://www.linkedin.com/in/ismael-bahmane-rodriguez-83332424a">
       <LinkedInIcon class="size-4" />
       LinkedIn
+    </SocialPill>
+    <SocialPill href="mailto:ismabytes@gmail.com">
+      <MailIcon class="size-4" />
+      <span data-i18n-key="hero.contactMe">{t(lang, "hero.contactMe")}</span>
     </SocialPill>
   </nav>
 </div>

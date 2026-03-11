@@ -1,25 +1,17 @@
 ---
 import ExperienceItem from "./ExperienceItem.astro"
-import { t } from "../lib/translations"
+import { t, translations } from "../lib/translations"
 
 const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
 
-const EXPERIENCE = [
-  {
-    key: "experience.item1",
-    date: t(lang, "experience.item1.date"),
-    title: t(lang, "experience.item1.title"),
-    company: t(lang, "experience.item1.company"),
-    description: t(lang, "experience.item1.description"),
-  },
-  {
-    key: "experience.item2",
-    date: t(lang, "experience.item2.date"),
-    title: t(lang, "experience.item2.title"),
-    company: t(lang, "experience.item2.company"),
-    description: t(lang, "experience.item2.description"),
-  },
-]
+const experienceData = translations[lang].experience;
+const EXPERIENCE = Object.keys(experienceData).map((key) => ({
+  key: `experience.${key}`,
+  date: experienceData[key].date,
+  title: experienceData[key].title,
+  company: experienceData[key].company,
+  description: experienceData[key].description,
+}));
 ---
 
 <ol class="relative mt-16">

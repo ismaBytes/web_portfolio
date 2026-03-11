@@ -19,6 +19,7 @@ export const translations: Record<Lang, Record<string, any>> = {
         "Desarrollador full stack con experiencia en crear aplicaciones limpias y escalables. Especializado en Java, SpringBoot, Angular y Vue.js. Apasionado por la tecnología y el aprendizaje continuo.  De Valencia, España. ",
       contactMe: "Contáctame",
       available: "Disponible para trabajar",
+      downloadResume: "Descargar CV",
     },
     skills: {
       techStack: "Stack Tecnológico",
@@ -36,14 +37,21 @@ export const translations: Record<Lang, Record<string, any>> = {
     },
     experience: {
       item1: {
-        date: "Junio 2025 - Presente",
+        date: "Febrero 2025 - Presente",
+        title: "Desarrollo Front-End",
+        company: "Accenture España",
+        description:
+          "Creación de una librería para componentes reutilizables de la aplicación como tablas, listas, selectores, botones... Generación de módulos completos e implementación de los mismos en flujos de la aplicación. Integración con backend a través de la infraestructura de AWS.",
+      },
+      item2: {
+        date: "Junio 2024 - Febrero 2025",
         title: "Desarrollo Full-Stack",
         company: "Everycode SL",
         description:
           "Trabajo en backend con Java-Spring-Maven aplicando patrón facade y arquitectura hexagonal. Desarrollo de sistema de estadísticas con Matomo y Jasper Reports. En frontend con Nuxt-Vue, optimicé tiempos de carga hasta un 90%. Integración CI/CD y metodologías ágiles con Jira.",
       },
-      item2: {
-        date: "Marzo 2022 - Junio 2025",
+      item3: {
+        date: "Marzo 2022 - Junio 2024",
         title: "Desarrollo Full-Stack y Soporte a Cliente",
         company: "IT Backing",
         description:
@@ -77,6 +85,7 @@ export const translations: Record<Lang, Record<string, any>> = {
         "Full stack developer with experience building clean and scalable applications. Specializing in Java, SpringBoot, Angular, and Vue.js. Passionate about technology and continuous learning. From Valencia, Spain.",
       contactMe: "Contact me",
       available: "Available to work",
+      downloadResume: "Download Resume",
     },
     skills: {
       techStack: "Tech Stack",
@@ -94,14 +103,21 @@ export const translations: Record<Lang, Record<string, any>> = {
     },
     experience: {
       item1: {
-        date: "June 2025 - Present",
+        date: "February 2025 - Present",
+        title: "Front-End Development",
+        company: "Accenture España",
+        description:
+          "Creation of a library for reusable application components such as tables, lists, selectors, buttons... Generation of full modules and their implementation in application flows. Integration with backend through AWS infrastructure.",
+      },
+      item2: {
+        date: "June 2024 - February 2025",
         title: "Full-Stack Development",
         company: "Everycode SL",
         description:
           "Working on backend with Java-Spring-Maven applying facade pattern and hexagonal architecture. Development of statistics system with Matomo and Jasper Reports. In frontend with Nuxt-Vue, I optimized load times by up to 90%. CI/CD integration and agile methodologies with Jira.",
       },
-      item2: {
-        date: "March 2022 - June 2025",
+      item3: {
+        date: "March 2022 - June 2024",
         title: "Full-Stack Development and Client Support",
         company: "IT Backing",
         description:
