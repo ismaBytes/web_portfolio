@@ -6,7 +6,8 @@ import { t } from "../lib/translations";
 
 const lang = Astro.url.pathname.includes("/eng") ? "en" : "es";
 
-const baseUrl = lang === "es" ? "/esp/" : "/eng/";
+const base = import.meta.env.BASE_URL.replace(/\/$/, ""); 
+const baseUrl = lang === "es" ? `${base}/esp/` : `${base}/eng/`;
 
 const navItems = [
   {
